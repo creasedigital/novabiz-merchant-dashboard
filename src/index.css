@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* NovaBiz base CSS custom properties */
+@layer base {
+  :root {
+    --color-bg: theme('colors.white');
+    --color-surface: theme('colors.gray.50');
+    --color-text-primary: theme('colors.gray.900');
+    --color-text-secondary: theme('colors.gray.600');
+  }
+
+  .dark {
+    --color-bg: theme('colors.gray.950');
+    --color-surface: theme('colors.gray.900');
+    --color-text-primary: theme('colors.gray.50');
+    --color-text-secondary: theme('colors.gray.400');
+  }
+
+  /* Ensure minimum touch target sizes (WCAG 2.5.5) */
+  button,
+  [role='button'],
+  a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Focus ring — high contrast in both modes */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-brand-500 ring-offset-2;
+  }
+}
